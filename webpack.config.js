@@ -29,8 +29,10 @@ module.exports = {
         library: { type: "module" },
 
         // update starts here
-        remote: {
-          "remoteExample": "http://localhost:30000/remoteEntry.js",
+        name: "remoteWithRouting",
+        filename: "remoteEntry.js",
+        exposes: {
+          "./Root": "./src/app/root.component.ts",
         },
         // update ends here
 

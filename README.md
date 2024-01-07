@@ -30,8 +30,10 @@ Remote would has url "http://localhost:30000/remoteEntry.js"
 plugins: [
     new ModuleFederationPlugin({
         [...]
-        remote: {
-          "remoteExample": "http://localhost:30000/remoteEntry.js",
+        name: "remoteWithRouting",
+        filename: "remoteEntry.js",
+        exposes: {
+          "./Root": "./src/app/root.component.ts",
         },
         [...]
     }),
