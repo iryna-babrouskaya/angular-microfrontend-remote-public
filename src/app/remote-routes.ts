@@ -5,23 +5,26 @@ import { Routes } from '@angular/router';
 // |--remote subpage with params in path (/page/:id/subpage)
 export const REMOTE_ROUTES: Routes = [
     {
-        path: '', redirectTo: 'home', pathMatch: 'full'
+        path: '', redirectTo: 'remote/home', pathMatch: 'full'
     },
     {
-        path: 'home',
+        path: 'remote', redirectTo: 'remote/home', pathMatch: 'full'
+    },
+    {
+        path: 'remote/home',
         loadComponent: () => import('./pages/pages.component').then(m => m.HomePageComponent)
     },
     {
-        path: 'page/:id',
+        path: 'remote/page/:id',
         loadComponent: () => import('./pages/pages.component').then(m => m.PageComponent)
     },
     {
-        path: 'page/:id/subpage',
+        path: 'remote/page/:id/subpage',
         loadComponent: () => import('./pages/pages.component').then(m => m.SubPageComponent)
     },
     {
-        path: 'error',
+        path: 'remote/error',
         loadComponent: () => import('./pages/pages.component').then(m => m.ErrorComponent)
     },
-    { path: '**', redirectTo: 'error' }
+    { path: '**', redirectTo: 'remote/error' }
 ];
