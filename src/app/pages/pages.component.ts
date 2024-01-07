@@ -1,9 +1,7 @@
 import { Component, Injectable } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, RouterModule } from '@angular/router';
 
 import { Subscription } from 'rxjs';
-
-const template = '<h2>Remote {{title}}</h2>';
 
 @Injectable()
 abstract class BaseComponent {
@@ -40,9 +38,10 @@ abstract class BaseComponent {
 }
 
 @Component({
+  imports: [RouterModule],
   standalone: true,
   selector: 'remote-home',
-  template: template
+  templateUrl: './page.component.html'
 })
 export class HomePageComponent extends BaseComponent {
   override title = 'Home w/o params';
@@ -52,9 +51,10 @@ export class HomePageComponent extends BaseComponent {
 }
 
 @Component({
+  imports: [RouterModule],
   standalone: true,
   selector: 'remote-page',
-  template: template
+  templateUrl: './page.component.html'
 })
 export class PageComponent extends BaseComponent {
   override title = 'Page with params';
@@ -64,9 +64,10 @@ export class PageComponent extends BaseComponent {
 }
 
 @Component({
+  imports: [RouterModule],
   standalone: true,
   selector: 'remote-subpage',
-  template: template
+  templateUrl: './page.component.html'
 })
 export class SubPageComponent extends BaseComponent {
   override title = 'SubPage';
@@ -76,9 +77,10 @@ export class SubPageComponent extends BaseComponent {
 }
 
 @Component({
+  imports: [RouterModule],
   standalone: true,
   selector: 'remote-error',
-  template: template
+  templateUrl: './page.component.html'
 })
 export class ErrorComponent extends BaseComponent {
   override title = 'Error';

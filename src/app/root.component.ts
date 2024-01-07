@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
-  imports: [RouterModule],
   selector: 'remote-root',
-  standalone: true,
-  templateUrl: './root.component.html'
+  template: '<router-outlet></router-outlet>'
 })
 export class RootComponent {}
