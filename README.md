@@ -1,27 +1,43 @@
 # AngularMicrofrontendRemote
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+<pre>Project uses Angular 15</pre>
 
-## Development server
+This repository is for Remote (Microfrontend) application. 
+Initial routing looks like
+```
+remote (/remote)
+|
+|--home remote page without params in path (/home)
+|--remote page with params in path (/page/:id)
+|--remote subpage with params in path (/page/:id/subpage)
+|--error remote page
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prepare the current application:
 
-## Code scaffolding
+1. Add Module Federation (as far as I use angular 15, I followed [instruction](https://www.npmjs.com/package/@angular-architects/module-federation/v/15.0.3#usage-%EF%B8%8F))
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install --save-dev @angular-architects/module-federation@^15.0.0
+ng add @angular-architects/module-federation@^15.0.0
+```
 
-## Build
+2. Update `webpack.config.js`.
+Remote would has url "http://localhost:30000/remoteEntry.js"
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+[...]
+plugins: [
+    new ModuleFederationPlugin({
+        [...]
+        remote: {
+          "remoteExample": "http://localhost:30000/remoteEntry.js",
+        },
+        [...]
+    }),
+    [...]
+]
+[...]
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

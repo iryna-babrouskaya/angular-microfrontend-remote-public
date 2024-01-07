@@ -1,0 +1,34 @@
+<div class="remote">
+    <header>
+      <h1 class="remote__header">Remote Aplication</h1>
+
+      <nav class="remote__header">
+        <h4>Remote Routes</h4>
+  
+        <ul class="remote-nav">
+          <li class="remote-nav__element">
+            <a routerLink="/">Remote Root (/remote)</a>
+          </li>
+          <li class="remote-nav__element">
+            <a routerLink="/home">
+              Remote Home w/o params in path (/remote/home)
+            </a>
+          </li>
+          <li class="remote-nav__element">
+            <a routerLink="/page/some_remote_id_here">
+              Remote Page w params in path (/remote/page/:id)
+            </a>
+          </li>
+          <li class="remote-nav__element">
+            <a routerLink="/page/some_remote_id_here/subpage">
+              Remote SubPage w params in path (/remote/page/:id/subpage)
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  
+    <div class="remote__container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
