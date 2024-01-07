@@ -32,7 +32,7 @@ module.exports = {
         name: "remoteWithRouting",
         filename: "remoteEntry.js",
         exposes: {
-          "./Root": "./src/app/root.component.ts",
+          "./RemoteWebComponent": "./src/bootstrap.ts",
         },
         // update ends here
 

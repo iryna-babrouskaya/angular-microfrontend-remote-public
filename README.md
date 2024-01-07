@@ -68,3 +68,13 @@ npm i @angular/elements@^15.2.10 --save
   customElements.define('remote-root', remoteRoot);
 })();
 ```
+
+3. Update `webpack.config.js`
+```
+[...]
+        exposes: {
+          "./RemoteWebComponent": "./src/bootstrap.ts",
+        },
+[...]
+```
+
