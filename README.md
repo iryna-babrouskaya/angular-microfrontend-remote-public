@@ -42,4 +42,29 @@ plugins: [
 [...]
 ```
 
+## Solution with Web Components
 
+1. Install @angular/elements
+
+```
+npm i @angular/elements@^15.2.10 --save
+```
+
+2. Create Web Component based on Standalone Root Component: update `bootstrap.ts`
+
+```
+(async () => {
+  const app = await createApplication({
+    providers: [
+      provideRouter(REMOTE_ROUTES),
+      globalThis.ngZone ? { provide: NgZone, useValue: globalThis.ngZone } : [],
+    ],
+  });
+
+  const remoteRoot = createCustomElement(RootComponent, {
+    injector: app.injector,
+  });
+
+  customElements.define('remote-root', remoteRoot);
+})();
+```
