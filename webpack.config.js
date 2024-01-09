@@ -32,6 +32,7 @@ module.exports = {
         name: "remoteWithRouting",
         filename: "remoteEntry.js",
         exposes: {
+          "./RemoteWebComponentRoutes": "./src/app/remote-routes.ts",
           "./RemoteWebComponent": "./src/bootstrap.ts",
         },
         // update ends here
