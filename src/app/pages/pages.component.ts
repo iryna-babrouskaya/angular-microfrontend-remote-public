@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params, RouterModule } from '@angular/router';
 
 import { Subscription } from 'rxjs';
@@ -36,6 +36,15 @@ abstract class BaseComponent {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 }
+
+@Component({
+  imports: [RouterModule],
+  standalone: true,
+  selector: 'remote-pages-root',
+  template: '<router-outlet></router-outlet>',
+  encapsulation: ViewEncapsulation.ShadowDom
+})
+export class PagesRootComponent {}
 
 @Component({
   imports: [RouterModule],
