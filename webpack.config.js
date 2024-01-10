@@ -29,19 +29,25 @@ module.exports = {
         library: { type: "module" },
 
         // update starts here
-        name: "remoteWithRouting",
+        name: "remoteWithRoutingWebComponentsSolution",
         filename: "remoteEntry.js",
         exposes: {
-          "./RemoteWebComponentRoutes": "./src/app/remote-routes.ts",
           "./RemoteWebComponent": "./src/bootstrap.ts",
         },
         // update ends here
-
         shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@angular/core": {
+            requiredVersion: 'auto'
+          }, 
+          "@angular/common": {
+            requiredVersion: 'auto'
+          }, 
+          "@angular/common/http": {
+            requiredVersion: 'auto'
+          }, 
+          "@angular/router": {
+            requiredVersion: 'auto'
+          },
 
           ...sharedMappings.getDescriptors()
         })

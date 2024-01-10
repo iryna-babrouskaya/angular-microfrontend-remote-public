@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { connectRouter } from './connect-routes';
 
 @Component({
-  imports: [RouterModule],
   selector: 'remote-root',
-  standalone: true,
-  templateUrl: './root.component.html'
+  templateUrl: './root.component.html',
+  encapsulation: ViewEncapsulation.ShadowDom
 })
-export class RootComponent {}
+export class RootComponent {
+  constructor() {
+    connectRouter();
+  }
+}
