@@ -12,20 +12,20 @@
   
         <ul class="remote-nav">
           <li class="remote-nav__element">
-            <a routerLink="/remote-web-components">Remote Root (/remote-web-components)</a>
+            <a href="/home">Go to shell</a>
           </li>
           <li class="remote-nav__element">
-            <a routerLink="/remote-web-components/home">
+            <a routerLink="{{id}}/remote-web-components/home">
               Remote Home w/o params in path (/remote-web-components/home)
             </a>
           </li>
           <li class="remote-nav__element">
-            <a routerLink="/remote-web-components/page/some_remote_id_here">
+            <a routerLink="{{id}}/remote-web-components/page/some_remote_id_here">
               Remote Page w params in path (/remote-web-components/page/:id)
             </a>
           </li>
           <li class="remote-nav__element">
-            <a routerLink="/remote-web-components/page/some_remote_id_here/subpage">
+            <a routerLink="{{id}}/remote-web-components/page/some_remote_id_here/subpage">
               Remote SubPage w params in path (/remote-web-components/page/:id/subpage)
             </a>
           </li>

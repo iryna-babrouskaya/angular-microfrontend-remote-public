@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 
 export function connectRouter(router = inject(Router), useHash = false): void {
     let url: string;
-    console.log(`${location.pathname.substring(1)}${location.search}`);
+    console.log(`${location.pathname.substring(1)}`);
     if (!useHash) {
         url = `${location.pathname.substring(1)}${location.search}`;
         router.navigateByUrl(url);

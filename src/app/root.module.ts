@@ -18,7 +18,7 @@ import { REMOTE_ROUTES } from './remote-routes';
   ],
   providers: [
   ],
-  bootstrap: [RootComponent],
+  bootstrap: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RootModule {
